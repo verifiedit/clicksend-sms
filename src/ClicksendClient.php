@@ -22,6 +22,16 @@ class ClicksendClient
         return (new ClicksendClient($username, $password))->client();
     }
 
+    public function client(): Client
+    {
+        return new Client(
+            [
+                'base_uri' => 'https://rest.clicksend.com/v3',
+                'handler' => $this->handler(),
+            ]
+        );
+    }
+
     private function handler(): HandlerStack
     {
         $stack = new HandlerStack();
@@ -30,15 +40,5 @@ class ClicksendClient
         $stack->push(Middleware::authorization($this->username, $this->password));
 
         return $stack;
-    }
-
-    private function client(): Client
-    {
-        return new Client(
-            [
-                'base_uri' => 'https://rest.clicksend.com/v3',
-                'handler' => $this->handler(),
-            ]
-        );
     }
 }

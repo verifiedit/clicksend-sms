@@ -8,6 +8,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use Verifiedit\ClicksendSms\Exceptions\ClicksendApiException;
 use Verifiedit\ClicksendSms\SMS\Message;
 use Verifiedit\ClicksendSms\SMS\Messages;
 use Verifiedit\ClicksendSms\SMS\RecipientAlreadySetException;
@@ -18,6 +19,7 @@ class SendSMSTest extends TestCase
     /**
      * @throws GuzzleException
      * @throws RecipientAlreadySetException
+     * @throws ClicksendApiException
      */
     public function testCanSendSMS(): void
     {

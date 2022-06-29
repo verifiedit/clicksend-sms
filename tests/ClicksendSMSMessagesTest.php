@@ -23,10 +23,22 @@ class ClicksendSMSMessagesTest extends TestCase
 
         $this->assertEquals(
             [
-                ['body' => 'Test', 'to' => '+61411111111'],
-                ['body' => 'Test 2', 'to' => '+61411111111'],
+                'messages' => [
+                    ['body' => 'Test', 'to' => '+61411111111'],
+                    ['body' => 'Test 2', 'to' => '+61411111111'],
+                ],
             ],
             $messages->toArray()
+        );
+
+        $this->assertEquals(
+            json_encode([
+                'messages' => [
+                    ['body' => 'Test', 'to' => '+61411111111'],
+                    ['body' => 'Test 2', 'to' => '+61411111111'],
+                ],
+            ]),
+            $messages
         );
     }
 }

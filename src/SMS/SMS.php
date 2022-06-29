@@ -29,11 +29,7 @@ class SMS
                 'POST',
                 '/sms/send',
                 [],
-                [
-                    'json' => [
-                        'messages' => $messages->toArray(),
-                    ],
-                ]
+                $messages,
             );
 
             $response = $this->client->send($request);

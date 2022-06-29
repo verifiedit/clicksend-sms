@@ -27,7 +27,7 @@ class SMS
         try {
             $request = new Request(
                 'POST',
-                '/sms/send',
+                'https://rest.clicksend.com/v3/sms/send',
                 [],
                 $messages,
             );

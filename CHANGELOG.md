@@ -2,6 +2,12 @@
 
 All notable changes to `clicksend-sms` will be documented in this file.
 
+## 2.0.0
+**Released:** Mar 25, 2022
+
+- Removed support for Laravel 9 and below
+- Removed support for PHP 8.2 and below
+
 ## 1.2.0
 **Released:** Mar 25, 2026
 

@@ -10,7 +10,7 @@ class Messages implements Arrayable
 {
     private array|Collection|null $items;
 
-    public function __construct(array|Collection $items = null)
+    public function __construct(array|Collection|null $items = null)
     {
         if ($items instanceof Collection) {
             $this->items = $items;
